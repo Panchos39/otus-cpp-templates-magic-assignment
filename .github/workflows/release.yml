@@ -16,7 +16,7 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install -y libgtest-dev
       - run: cmake . -DPATCH_VERSION=${{ github.run_number }} -DWITH_GOOGLE_TEST=ON
       - run: cmake --build .
-      - run: cmake --build . --target target_test
+      - run: cmake --build . --target test
   deploy:
     needs: build
     runs-on: ubuntu-latest
